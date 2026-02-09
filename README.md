@@ -52,11 +52,11 @@ This will install the required dependencies:
 
 ## Features
 
-✅ Custom middleware for authentication
-✅ Password-protected content
-✅ Form handling with body-parser
-✅ Separation of public and protected routes
-✅ ES6 modules syntax
+- Custom middleware for authentication
+- Password-protected content
+- Form handling with body-parser
+- Separation of public and protected routes
+- ES6 modules syntax
 
 ## Learning Objectives
 
