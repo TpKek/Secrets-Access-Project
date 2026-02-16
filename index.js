@@ -10,11 +10,13 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
-var isAuthenticated = false;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let isAuthenticated = false;
+
 function passwordCheck(req, _res, next){
+  isAuthenticated = false; // Reset for each request
   const password = req.body["password"];
   if(password === "ILoveProgramming"){
     isAuthenticated = true;
@@ -29,11 +31,11 @@ app.get("/", (req,res) => {
 app.use(passwordCheck);
 
 app.post("/check", (req,res) =>{
-if(isAuthenticated){
-  res.sendFile(__dirname + "/public/secret.html");
-} else {
-  res.sendFile(__dirname + '/public/denied.html');
-}
+  if(isAuthenticated){
+    res.sendFile(__dirname + "/public/secret.html");
+  } else {
+    res.sendFile(__dirname + '/public/denied.html');
+  }
 });
 
 app.listen(port, () => {
