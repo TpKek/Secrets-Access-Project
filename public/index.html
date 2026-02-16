@@ -1,17 +1,74 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Secrets</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Access Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+<body class="login-page">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
 
-<body>
-  <h1>Secrets</h1>
-  <form action="/check" method="POST">
-    <label for="password">Password:</label>
-    <input type="text" id="password" name="password" required>
-    <input type="submit" value="Submit">
-  </form>
+  <div class="container">
+    <div class="card">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div class="header">
+        <h1>Secure Access Portal</h1>
+        <p>Enter your credentials to access the protected secrets area</p>
+      </div>
+
+      <form action="/check" method="POST">
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <div class="input-wrapper">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-input"
+              placeholder="Enter access password"
+              required
+              autocomplete="current-password"
+            >
+            <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <span>Authenticate</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </form>
+
+      <div class="hint">
+        <p>Demo password: <code>ILoveProgramming</code></p>
+      </div>
+
+      <div class="security-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <polyline points="9 12 11 14 15 10"></polyline>
+        </svg>
+        <span>Protected by Express Middleware Authentication</span>
+      </div>
+    </div>
+  </div>
 </body>
-
 </html>

@@ -14,12 +14,12 @@ var isAuthenticated = false;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-function passwordCheck(req,res,next){
+function passwordCheck(req, _res, next){
   const password = req.body["password"];
   if(password === "ILoveProgramming"){
-    isAuthenticated = true;} {
-    }
-    next();
+    isAuthenticated = true;
+  }
+  next();
 }
 
 app.get("/", (req,res) => {
