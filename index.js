@@ -32,7 +32,7 @@ app.post("/check", (req,res) =>{
 if(isAuthenticated){
   res.sendFile(__dirname + "/public/secret.html");
 } else {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(__dirname + '/public/denied.html');
 }
 });
 
